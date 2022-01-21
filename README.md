@@ -17,7 +17,7 @@ int main() {
 By going through this exercise, you will be introduced to `C` programming lanuguage behaviour and use it to increase your control on the system.
 
 In this exercise we will go through with some programs that will give the introduction to programming constructs and give you the following takeaways included below:
-    
+
     1. Introduction to the data type declaration and initialization.
 
     2. Declaration of functions, using them to modularize the code and improving performance or program.
@@ -35,7 +35,7 @@ In this exercise we will go through with some programs that will give the introd
 
 ### Exercise structure:
     Number. Statement of problem.
-        Take away from this asg: 
+        Take away from this asg:
         ---
         ---
 <br/>
@@ -44,7 +44,7 @@ In this exercise we will go through with some programs that will give the introd
 
 <br/>
 
-###    1. Create an array: 
+###    1. Create an array:
 
 
 ```c
@@ -133,7 +133,7 @@ clean:
 ```
 <br/>
 
-### 7. Change the array size to 500 million. 
+### 7. Change the array size to 500 million.
 
 - How to check the stack size and heap size in the system?
 - How to transform the nature of existing static program to dynamic?
@@ -182,12 +182,12 @@ void foo(void) {
 
 ### 11. Make the separate threads for functions-
 
-- Move the operations into separate threads. 
-    
-- This will expose you to multithreaded issues like sorting the array while trying to find the average.
-        i.e. Protect the array using some form of mutex or semaphore). 
+- Move the operations into separate threads.
 
-- The min, max and average can all run in parallel (they don’t responsible for mutation in the array) but the sort operation needs sole access to the array. 
+- This will expose you to multithreaded issues like sorting the array while trying to find the average.
+        i.e. Protect the array using some form of mutex or semaphore).
+
+- The min, max and average can all run in parallel (they don’t responsible for mutation in the array) but the sort operation needs sole access to the array.
 ```c
 #include <pthread.h>
 void *thread(void *vargp)
@@ -207,5 +207,5 @@ int main()
 }
 ```
 <br/>
-    
+
     This is useful to understand because it forms the basis of the Rust language’s ownership model.
