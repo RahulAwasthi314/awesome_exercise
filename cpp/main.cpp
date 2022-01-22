@@ -10,33 +10,10 @@ using namespace std;
 // exercise 3:
 // objective: implement minimum, maximum and average functions.
 
-int min(const double* nums) {
-    int min = *nums;
-    for (int i = 1; i < MAX_VALUE; i++) {
-        if (min > *(nums + i)) {
-            min = *(nums + i);
-        }
-    }
-    return min;
-}
+double min(const double*);
+double max(const double*);
+double avg(const double*);
 
-int max(const double* nums) {
-    int max = *nums;
-    for (int i = 1; i < MAX_VALUE; i++) {
-        if (max < *(nums + i)) {
-            max = *(nums + i);
-        }
-    }
-    return max;
-}
-
-double avg(const double* nums) {
-    double sum = 0;
-    for (int i = 0; i < MAX_VALUE; i++) {
-        sum += *(nums + i);
-    }
-    return sum / MAX_VALUE;
-}
 
 int main () {
     double arr[1000] = {0};
@@ -58,4 +35,33 @@ int main () {
     cout << "Average value in the array is: " << res << endl;
 
     return 0;
+}
+
+
+double min(const double* nums) {
+    double min = *nums;
+    for (int i = 1; i < MAX_VALUE; i++) {
+        if (min > *(nums + i)) {
+            min = *(nums + i);
+        }
+    }
+    return min;
+}
+
+double max(const double* nums) {
+    double max = *nums;
+    for (int i = 1; i < MAX_VALUE; i++) {
+        if (max < *(nums + i)) {
+            max = *(nums + i);
+        }
+    }
+    return max;
+}
+
+double avg(const double* nums) {
+    double sum = 0;
+    for (int i = 0; i < MAX_VALUE; i++) {
+        sum += *(nums + i);
+    }
+    return sum / MAX_VALUE;
 }
