@@ -1,7 +1,7 @@
-| Language | Compiler |
-| -------- | -------- |
-| ![Language](https://img.shields.io/badge/Language-C-blue) | ![Compiler](https://img.shields.io/badge/Compiler-GCC%20%20%20-blue)
-|![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)|![Compiler](https://img.shields.io/badge/Compiler-G%2B%2B-blue)|
+| Language | Compiler | Compiler Version |
+| -------- | -------- |----------------- |
+| ![Language](https://img.shields.io/badge/Language-C-blue) | ![Compiler](https://img.shields.io/badge/Compiler-GCC%20%20%20-blue) | ![Compiler Version](https://img.shields.io/badge/Version-1.11.0-blue) | 
+|![Language](https://img.shields.io/badge/Language-C%2B%2B-blue)|![Compiler](https://img.shields.io/badge/Compiler-G%2B%2B-blue)| ![Compiler Version](https://img.shields.io/badge/Version-9.4.0-blue) |
 
 ## Hello, World! :wave:
 ```c
