@@ -12,30 +12,30 @@ int main() {
 }
 ```
 
-## An exciting exercise to improve the programming concepts:-
+## An exciting exercise to improve on programming concepts:-
 
-By going through this exercise, you will be introduced to `C` programming lanuguage behaviour and use it to increase your control on the system.
+By going through this exercise, you will be introduced to the `C` programming lanuguage behaviour and use it to increase your control of the operating system.
 
-In this exercise we will go through with some programs that will give the introduction to programming constructs and give you the following takeaways included below:
-    
-    1. Introduction to the data type declaration and initialization.
+In this exercise we will go through some programs that will introduce you to various programming constructs and give you the following takeaways:
 
-    2. Declaration of functions, using them to modularize the code and improving performance or program.
+    1. Introduction to data type declaration and initialization.
 
-    3. Header file design, organizing the project by introducing them in the project.
+    2. Declaration of functions, using them to modularize your code and improving the performance of the program.
 
-    4. Introduction to the build system, using them to compile and link the necessary files.
+    3. Header file design, organizing the project with header files.
 
-    5. Handling large input size and tranforming to dynamic types as requirement of program changes.
+    4. Introduction to the build system, using it to compile and link the necessary files.
 
-    6. Using timer and improving performance of program.
+    5. Handling large input size and switching to dynamic types as requirement of program changes.
 
-    7. Introducing concurrency in the program to handle mutex semaphor and protecting processing data while multiprocessing.
+    6. Using timers and improving the performance of the program.
+
+    7. Introducing concurrency in the program to allow for parallel processing.
 <br/>
 
 ### Exercise structure:
     Number. Statement of problem.
-        Take away from this asg: 
+        Take away from this asg:
         ---
         ---
 <br/>
@@ -44,31 +44,32 @@ In this exercise we will go through with some programs that will give the introd
 
 <br/>
 
-###    1. Create an array: 
+###    1. Create an array:
 
 
 ```c
 size: 1000, data_type: double.
 ```
-- How to declare a variable of specific data type in the programming language?
--  How to initialize the same value to a large container like array by just an assignment?
+- How to declare a variable of a specific data type in the programming language?
+- How to initialize all values of a large container with the same value by just using assignment?
 ```c
 double arr[1000] = {0};
 ```
 <br/>
 
-### 2. Store 1000 random values in it:
+### 2. Store 1000 random values in the array:
 
-- Combining takeaways of previous assignment
-- How to generate random numbers in programming environment?
+- Combining the takeaways of the previous assignment
+- How to generate random numbers?
 ```c
+void srand(unsigned int seed);
 int rand(void);
 ```
 <br/>
 
-### 3. Implement functions to calculate min, max and average value.
+### 3. Implement functions to calculate the min, max and average value.
 
-- How to design functions, taking formal arguments by pass by value, pass by address?
+- How to design functions, taking formal arguments by value and by address?
 - Implementing functions to modularize the program.
 ```c
 void foo(void) {
@@ -78,7 +79,7 @@ void foo(void) {
 ```
 <br/>
 
-### 4. Implement sorting algorithms to sort the array.
+### 4. Implement different sorting algorithms to sort the array.
 
 - Introduction to Sorting Algorithms.
 - How to implement them?
@@ -91,8 +92,8 @@ heapSort(arr);
 
 ### 5. Make specific header files for those functions.
 
-- How to use header files in the aspect of data hiding?
-- How not to expose array publicly to other files? {private, public and protected is not available in C.}
+- How to use header files for data hiding?
+- How not to expose the array publicly to other files? {private, public and protected is not available in C.}
 - Organize the same functions in a single module {header file}.
 ```c
 // bar.h
@@ -116,9 +117,9 @@ void baz(void) {
 ```
 <br/>
 
-### 6. Make a build system for all compiling and linking stuff:
+### 6. Use a build system for compiling and linking:
 
-- Understand how to compile and link multiple files to generate an executable - on Linux, this would be by using makefiles.
+- Learn how to compile and link multiple files to generate an executable - on Linux, this would be done using makefiles.
 
 ```makefile
 all: compile
@@ -133,10 +134,10 @@ clean:
 ```
 <br/>
 
-### 7. Change the array size to 500 million. 
+### 7. Change the array size to 500 million.
 
 - How to check the stack size and heap size in the system?
-- How to transform the nature of existing static program to dynamic?
+- How to transform the nature of the existing static program to a dynamic one?
 
 - This will compile but in all likelihood will crash (or segfault) when you run it. This exposes you to heap and stack (c arrays are on the stack and the array is now too big to fit on the stack).
 ```c
@@ -166,7 +167,7 @@ clock_t t = clock();
 
 ### 10. Improve the performance.
 
-- By turn on various compiler warnings (if using `gcc` or `clang`, `-Wall` and `-Werror`).
+- By turning on various compiler warnings (if using `gcc` or `clang`, `-Wall` and `-Werror`).
 - Enjoy fixing up `problems` in your code.
 ```c
 void foo(void) {
@@ -182,12 +183,12 @@ void foo(void) {
 
 ### 11. Make the separate threads for functions-
 
-- Move the operations into separate threads. 
-    
-- This will expose you to multithreaded issues like sorting the array while trying to find the average.
-        i.e. Protect the array using some form of mutex or semaphore). 
+- Move the operations into separate threads.
 
-- The min, max and average can all run in parallel (they don’t responsible for mutation in the array) but the sort operation needs sole access to the array. 
+- This will expose you to multithreaded issues like sorting the array while trying to find the average.
+        i.e. Protect the array using some form of mutex or semaphore).
+
+- The min, max and average can all run in parallel (they don’t responsible for mutation in the array) but the sort operation needs sole access to the array.
 ```c
 #include <pthread.h>
 void *thread(void *vargp)
@@ -207,5 +208,8 @@ int main()
 }
 ```
 <br/>
-    
-    This is useful to understand because it forms the basis of the Rust language’s ownership model.
+
+----
+
+Based on: `https://www.reddit.com/r/C_Programming/comments/s7vfak/which_is_the_best_way_to_learn_c/htcepmw/`
+
