@@ -3,7 +3,7 @@
 #include <ctime>
 
 #define RAND_LIMIT 100
-#define MAX_VALUE 10
+#define MAX_VALUE 1000
 
 using namespace std;
 
@@ -22,9 +22,14 @@ void swap(double*, int, int);
 int partition(double*, int, int);
 void quickSort(double*, int, int);
 
+
+void maxHeapify(double*, int, int);
+void heapSort(double*, int);
+
+
 int main () {
     srand(time(NULL));
-    double arr[10] = {0};
+    double arr[MAX_VALUE] = {0};
     // assigning the random values to array 
     for (int i = 0; i < MAX_VALUE; i++) {
         arr[i] = rand() % RAND_LIMIT;
@@ -48,13 +53,13 @@ int main () {
     res = avg(arr);
     cout << "Average value in the array is: " << res << endl;
 
-    double ar[] = {5,4,3,2,1};
-    quickSort(ar, 0, 4);
-    // mergeSort(arr, 0, MAX_VALUE - 1);
+    heapSort(arr, MAX_VALUE);
+    // quickSort(arr, 0, MAX_VALUE);
+    // mergeSort(arr, 0, MAX_VALUE);
 
     cout << "Sorted array is: ";
-    for (int i = 0; i < 5; i++) {
-        cout << ar[i] << " ";
+    for (int i = 0; i < MAX_VALUE; i++) {
+        cout << arr[i] << " ";
     }
     cout << endl;
     return 0;
@@ -89,7 +94,7 @@ double avg(const double* nums) {
     return sum / MAX_VALUE;
 }
 
-/*
+/**
  * mergeSort algorithm Implementation
  * Time Complexity : O(n log n) Space: O(log n)
  */
@@ -134,7 +139,7 @@ void merge(double* arr, int p, int q, int r) {
     }
 }
 
-/*
+/**
  * Quick Sort
 // Time Complexity: O(n log n) {avg case}
  */
@@ -165,4 +170,42 @@ void quickSort(double* arr, int p, int r) {
         quickSort(arr, p, q - 1);
         quickSort(arr, q + 1, r);
     }
+}
+
+/**
+ * Heap Sort
+ * Time Complexity: O(n log n)
+ */
+
+// maxHeapify
+//  Time Complexity: O(log n)
+void maxHeapify(double* arr, int n, int i)
+{
+	int largest = i;
+	int l = 2 * i + 1;
+	int r = 2 * i + 2;
+
+	if (l < n && arr[l] > arr[largest])
+		largest = l;
+
+	if (r < n && arr[r] > arr[largest])
+		largest = r;
+
+	if (largest != i) {
+		swap(arr[i], arr[largest]);
+
+		maxHeapify(arr, n, largest);
+	}
+}
+
+// Time Complexity : O(n/2) * O(log n) + O(n) * O(log n) = O(n log n)
+void heapSort(double* arr, int n)
+{
+	for (int i = n / 2 - 1; i >= 0; i--)
+		maxHeapify(arr, n, i);
+
+	for (int i = n - 1; i > 0; i--) {
+		swap(arr[0], arr[i]);
+		maxHeapify(arr, i, 0);
+	}
 }
