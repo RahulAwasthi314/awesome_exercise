@@ -7,9 +7,7 @@ using namespace std;
 #define MAX_VALUE 1000
 
 #include "helper.h"
-#include "mergeSort.h"
-#include "quickSort.h"
-#include "heapSort.h"
+#include "sort.h"
 
 // exercise 5:
 // objective: separate functions into header files

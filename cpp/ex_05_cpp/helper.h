@@ -1,3 +1,5 @@
+#ifndef HELPER_H
+#define HELPER_H
 
 double min(const double* nums) {
     double min = *nums;
@@ -32,3 +34,4 @@ void swap(double* arr, int i, int j) {
     *(arr + i) = *(arr + j);
     *(arr + j) = t;
 }
+#endif

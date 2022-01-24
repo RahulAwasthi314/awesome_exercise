@@ -1,5 +1,3 @@
-#ifndef QUICKSORT_H
-#define QUICKSORT_H
 /*
  * Quick Sort
 // Time Complexity: O(n log n) {avg case}
@@ -14,7 +12,6 @@ int partition(double* arr, int p, int r) {
         if (arr[j] <= x) {
             swap(arr, ++i, j);
         }
-
     }
     swap(arr, i+1, r);
     return i+1;
@@ -29,4 +26,3 @@ void quickSort(double* arr, int p, int r) {
         quickSort(arr, q + 1, r);
     }
 }
-#endif

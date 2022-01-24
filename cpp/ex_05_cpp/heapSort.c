@@ -1,8 +1,4 @@
-#ifndef HEAPSORT_H
-#define HEAPSORT_H
-
-#include <iostream>
-
+// heap sort
 void maxHeapify(double* arr, int n, int i)
 {
 	int largest = i;
@@ -32,4 +28,3 @@ void heapSort(double* arr, int n)
 		maxHeapify(arr, i, 0);
 	}
 }
-#endif

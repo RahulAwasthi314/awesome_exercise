@@ -1,5 +1,4 @@
-#ifndef MERGESORT_H
-#define MERGESORT_H
+// Merge Sort definition
 
 void merge(double* arr, int p, int q, int r) {
     int l = q - p + 1, m = r - q;
@@ -19,7 +18,7 @@ void merge(double* arr, int p, int q, int r) {
     // it must be initialized to first index of the array
     int k = p;
 
-    while (i < l and j < m) {
+    while (i < l && j < m) {
         if (a[i] < b[j]) arr[k++] = a[i++];
         // do not forget else after if, it can cause hrs of debugging.
         else arr[k++] = b[j++];
@@ -40,4 +39,3 @@ void mergeSort(double* arr, int p, int r) {
         merge(arr, p, q, r);
     }
 }
-#endif
